@@ -652,6 +652,99 @@ body {
     color: rgba(255, 255, 255, 0.9);
 }
 
+
+.topics-group {
+    margin-top: 2.25rem;
+}
+
+.topics-group:first-of-type {
+    margin-top: 1.25rem;
+}
+
+.topics-subtitle-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.topics-subtitle {
+    margin: 0;
+    font-size: 1.3rem;
+    color: var(--text-primary);
+}
+
+.topic-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.35rem 0.8rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.topic-badge-soft {
+    background: var(--bg-card);
+    color: var(--primary);
+    border: 1px solid var(--border);
+}
+
+.topic-card.priority {
+    border: 1px solid rgba(79, 70, 229, 0.22);
+    box-shadow: var(--shadow-md);
+    position: relative;
+}
+
+.topic-card.priority::before {
+    content: "AI重点";
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--primary);
+    background: rgba(79, 70, 229, 0.10);
+    border-radius: 999px;
+    padding: 0.25rem 0.65rem;
+}
+
+.topic-note {
+    margin-top: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-size: 0.96rem;
+}
+
+.meta-chip-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.9rem;
+}
+
+.meta-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.28rem 0.68rem;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    line-height: 1;
+    background: var(--bg-alt);
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+}
+
+.meta-chip.primary {
+    background: rgba(79, 70, 229, 0.10);
+    color: var(--primary);
+    border-color: rgba(79, 70, 229, 0.18);
+}
+
 /* 标签页 */
 .tabs {
     display: flex;
