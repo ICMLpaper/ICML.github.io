@@ -1,1 +1,663 @@
-1
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>人文社科-001：FieldFrame: 面向混合方法研究的概念操作化、证据链锚定与解释强度校准框架 | International Conference of MeaningLess Paper</title>
+<!-- 外部资源（和主站完全统一） -->
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
+<!-- 主站样式复用 -->
+<link href="../../../style.css" rel="stylesheet"/>
+<!-- 网站图标 -->
+<link href="../../../favicon.svg" rel="icon" type="image/svg+xml"/>
+<!-- 论文专属样式 -->
+<style>
+        /* 论文页面核心布局 */
+        .paper-wrapper {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        /* 侧边目录导航 */
+        .paper-sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+        .sidebar-title {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .toc-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .toc-link {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.4;
+            transition: var(--transition);
+            display: block;
+            padding: 0.3rem 0.5rem;
+            border-radius: var(--radius-sm);
+        }
+        .toc-link:hover, .toc-link.active {
+            background: var(--primary-light);
+            color: var(--primary);
+        }
+        .dark-theme .toc-link:hover, .dark-theme .toc-link.active {
+            background: var(--primary-dark);
+        }
+        /* 论文操作栏 */
+        .paper-actions {
+            margin-top: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        .action-btn {
+            width: 100%;
+            padding: 0.6rem 1rem;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            background: var(--bg-main);
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+        .action-btn.primary {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        .action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+        /* 论文主体容器 */
+        .paper-main {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: 3rem 4rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+        /* 论文头部 */
+        .paper-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 1.5rem;
+        }
+        .accept-badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: #10b981;
+            color: white;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .paper-header h1 {
+            font-size: 1.8rem;
+            line-height: 1.4;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        .authors {
+            font-size: 1rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-primary);
+            line-height: 1.5;
+        }
+        .affiliations {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+        .paper-meta {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        /* 摘要模块 */
+        .abstract-block {
+            margin-bottom: 2rem;
+        }
+        .abstract-block h2 {
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+        .abstract-block p {
+            text-align: justify;
+            line-height: 1.6;
+            font-size: 0.95rem;
+            text-indent: 2em;
+            color: var(--text-secondary);
+        }
+        /* 关键词 */
+        .keywords-block {
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+        .keywords-block strong {
+            color: var(--text-primary);
+        }
+        /* 正文排版 */
+        .paper-content h2 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 2rem 0 0.8rem;
+            color: var(--text-primary);
+            scroll-margin-top: 100px;
+        }
+        .paper-content h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 1.2rem 0 0.6rem;
+            color: var(--text-primary);
+            scroll-margin-top: 100px;
+        }
+        .paper-content p {
+            text-align: justify;
+            line-height: 1.7;
+            margin-bottom: 0.8rem;
+            font-size: 0.98rem;
+            color: var(--text-secondary);
+        }
+        /* 公式样式 */
+        .formula-wrapper {
+            margin: 1rem 0;
+            text-align: center;
+            overflow-x: auto;
+        }
+        .formula-number {
+            float: right;
+            color: var(--text-secondary);
+        }
+        /* 图表容器 */
+        .figure-wrapper {
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+        .figure-container {
+            max-width: 100%;
+            margin: 0 auto;
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            background: var(--bg-main);
+        }
+        .figure-caption {
+            margin-top: 0.8rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            text-align: center;
+        }
+        .figure-img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        /* 表格样式 */
+        .paper-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.2rem 0;
+            font-size: 0.9rem;
+        }
+        .paper-table th, .paper-table td {
+            border: 1px solid var(--border);
+            padding: 0.6rem;
+            text-align: center;
+        }
+        .paper-table th {
+            background-color: var(--bg-alt);
+            font-weight: 600;
+        }
+        .table-caption {
+            text-align: center;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+        /* 引用格式 */
+        .citation-block {
+            background: var(--bg-alt);
+            border-radius: var(--radius);
+            padding: 1.2rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--primary);
+        }
+        .citation-block h3 {
+            margin-top: 0;
+            margin-bottom: 0.8rem;
+        }
+        .citation-code {
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            overflow-x: auto;
+        }
+        /* 参考文献 */
+        .reference-list {
+            margin-top: 1.5rem;
+        }
+        .reference-list li {
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            padding-left: 2em;
+            text-indent: -2em;
+        }
+        /* 移动端适配 */
+        @media (max-width: 1024px) {
+            .paper-wrapper {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+            .paper-sidebar {
+                position: static;
+                margin-bottom: 1rem;
+            }
+            .paper-main {
+                padding: 1.5rem 1rem;
+            }
+            .paper-header h1 {
+                font-size: 1.4rem;
+            }
+            .paper-meta {
+                flex-direction: column;
+                gap: 0.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- 导航栏（和主站完全统一） -->
+<header class="navbar" id="navbar">
+<div class="nav-container">
+<div class="logo">
+<svg class="logo-img" viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+<path d="M256 448l32 320h384l32-320H256zM736 128H576l-32-32H416l-32 32H224v64h512v-64zM192 192v384c0 35.3 28.7 64 64 64h448c35.3 0 64-28.7 64-64V192H192z" fill="currentColor"></path>
+</svg>
+<a class="conf-name" href="../../../index.html">ICMLpaper</a>
+</div>
+<nav class="nav-links">
+<a class="nav-link" href="../../../index.html#home">首页</a>
+<a class="nav-link active" href="../../../index.html#papers">论文归档</a>
+<a class="nav-link" href="../../../index.html#submit">投稿指南</a>
+</nav>
+<div class="nav-actions">
+<button class="icon-btn" id="theme-toggle" title="切换主题">
+<i class="fas fa-moon"></i>
+</button>
+<button class="icon-btn lang-btn" id="lang-toggle" title="Switch to English">
+<i class="fas fa-language"></i><span class="lang-label">EN</span>
+</button>
+</div>
+</div>
+</header>
+<!-- 论文主体布局 -->
+<section class="section">
+<div class="paper-wrapper">
+<!-- 侧边目录+操作栏 -->
+<aside class="paper-sidebar">
+<div class="sidebar-title">
+<i class="fas fa-list"></i> 论文目录
+                </div>
+<ul class="toc-list">
+<li><a class="toc-link" href="#abstract">摘要</a></li>
+<li><a class="toc-link" href="#introduction">1. 引言</a></li>
+<li><a class="toc-link" href="#related-work">2. 相关工作</a></li>
+<li><a class="toc-link" href="#methodology">3. 方法论</a></li>
+<li><a class="toc-link" href="#experiments">4. 实验</a></li>
+<li><a class="toc-link" href="#limitations">5. 局限性</a></li>
+<li><a class="toc-link" href="#ethics">6. 伦理声明</a></li>
+<li><a class="toc-link" href="#conclusion">7. 结论</a></li>
+<li><a class="toc-link" href="#acknowledgements">致谢</a></li>
+<li><a class="toc-link" href="#submission-note">投稿说明</a></li>
+<li><a class="toc-link" href="#references">参考文献</a></li>
+</ul>
+<div class="paper-actions">
+<a class="action-btn primary" href="mailto:2072373170@qq.com?subject=ICMLpaper%20投稿咨询">
+<i class="fas fa-envelope"></i> 投稿邮箱
+                    </a>
+<a class="action-btn" href="../../../index.html#submit">
+<i class="fas fa-paper-plane"></i> 直投说明
+                    </a>
+<a class="action-btn" href="../">
+<i class="fas fa-book"></i> 返回归档
+                    </a>
+</div>
+</aside>
+<!-- 论文正文 -->
+<main class="paper-main">
+<div class="paper-header">
+<span class="accept-badge">ICMLpaper 2025 录用论文</span>
+<h1>人文社科-001：FieldFrame: 面向混合方法研究的概念操作化、证据链锚定与解释强度校准框架</h1>
+<div class="authors">问题意识修补匠<sup>1</sup>, 田野札记整理员<sup>2</sup>, 匿名社科狗<sup>3,*</sup></div>
+<div class="affiliations"><sup>1</sup> 混合方法与社会解释研究室 | <sup>2</sup> 田野材料整理工坊<br/><sup>3</sup> 某大学教育与社会研究中心<br/><sup>*</sup> 通讯作者：2072373170@qq.com</div>
+<div class="paper-meta">
+<span><strong>录用届数：</strong>ICMLpaper 2025 首届</span>
+<span><strong>归档时间：</strong>2025年6月1日</span>
+<span><strong>投稿方式：</strong>邮箱 / 小红书直投</span>
+<span><strong>所属领域：</strong>人文社科与教育 / 混合方法研究</span>
+</div>
+</div>
+<div class="abstract-block" id="submission-note" style="margin-top: 1.2rem;">
+<h2>Submission Contact | 投稿联系</h2>
+<p>投稿请发送至 <a href="mailto:2072373170@qq.com">2072373170@qq.com</a>，或在小红书搜索 <code>ICMLpaper</code> 账号直投；建议附带论文 PDF、标题、作者、摘要与联系方式，便于生成归档页面。</p>
+</div>
+<div class="abstract-block" id="abstract">
+<h2>Abstract | 摘要</h2>
+<p>在人文社科研究中，真正削弱论文说服力的往往不是文句不流畅，而是概念、操作化、材料与推断之间的错位：研究问题讨论的是“教育焦虑”，量表测量的却是一般性压力；讨论部分援引了一段访谈引语，却给出了超出材料边界的制度性结论。为解决这类页面级断裂，本文提出 <b>FieldFrame</b>，一个面向混合方法研究的概念操作化、证据链锚定与解释强度校准框架。该方法通过主张图规划、构念—指标对照表、证据账本、引语—结论链接器与解释强度校准器，将“研究问题—方法—证据—讨论”组织成可检查的链式结构。基于 <b>SocArgument-7.2K</b> 与 <b>MixedMethodBench-180</b> 的评测结果表明，FieldFrame 在概念—操作化一致性、证据锚定得分、引语—结论落地率和方法透明度上均显著优于基线，同时将过度推断率降低至 6.1%。本文强调，人文社科写作真正需要修复的不是语气不够学术，而是材料支撑与解释边界没有被明确写出来。</p>
+</div>
+<div class="keywords-block"><strong>关键词：</strong>混合方法研究、概念操作化、证据链、解释强度、质性编码、社会调查写作</div>
+<div class="citation-block">
+<h3><i class="fas fa-quote-left"></i> 引用格式</h3>
+<pre class="citation-code">@inproceedings{humanitiessocial001,
+  title={人文社科-001：FieldFrame: 面向混合方法研究的概念操作化、证据链锚定与解释强度校准框架},
+  author={问题意识修补匠 and 田野札记整理员 and 匿名社科狗},
+  booktitle={International Conference of MeaningLess Paper},
+  year={2025}
+}</pre>
+</div>
+<div class="paper-content">
+<h2 id="introduction">1. Introduction | 引言</h2>
+<p>在人文社科论文写作中，最常见的失败并不是“不会写”，而是写作各部分各自成立、合起来却无法相互支撑。引言部分提出了宏观而动人的问题意识，方法部分列出了一套看似规范的问卷条目与访谈提纲，结果部分给出表格与引语，讨论部分又迅速上升到结构性解释、政策建议乃至价值判断。每一部分单看都像论文，但沿着“研究问题—材料—推断”的主线阅读时，读者会发现几个典型断裂：概念没有真正被操作化，材料没有被稳定锚定，讨论的结论强度超过了证据等级。</p>
+<p>这类问题在混合方法研究中尤其突出。一方面，量化部分倾向于把抽象构念压缩为有限条目，导致概念外延在测量中发生偏移；另一方面，质性部分又常通过少量引语承担过多解释负荷，使个案材料被误写为普遍机制。现有通用写作系统擅长生成连贯段落，却缺乏对构念、变量、编码主题与解释边界的显式约束；而现有分析软件更关注统计计算或编码管理，很少回到“论文页面”这一层，去检查一段讨论是否真的被前面的表格和引语支撑。</p>
+<p>基于此，本文提出 <b>FieldFrame</b>，将人文社科论文视为一个由主张、构念、材料与推断等级共同组成的页面级证据系统。与只追求语言流畅的方案不同，FieldFrame 关注三类更接近领域实践的问题：其一，研究问题中的核心构念是否被稳定映射到条目、访谈主题和结果指标；其二，正文中的结论句是否能够追溯到具体表格、引语或场域记录；其三，作者使用的解释强度是否与研究设计与证据类型相匹配。</p>
+<p>本文的主要贡献如下：1）提出“主张图—构念操作化表—证据账本”三层表示，使社科页面的逻辑链条可被显式检查；2）构建人文社科写作数据集 <b>SocArgument-7.2K</b> 与页面级评测集 <b>MixedMethodBench-180</b>；3）定义概念—操作化一致性、证据锚定得分、引语—结论落地率、方法透明度与过度推断率等指标；4）说明页面级一致性系统如何在不替代真实研究设计的前提下，帮助作者把“材料能支撑到哪里”写得更清楚。</p>
+<h2 id="related-work">2. Related Work | 相关工作</h2>
+<h3>2.1 构念操作化与测量效度</h3>
+<p>社会调查研究始终强调概念界定与测量之间的对应关系。无论是教育研究中的“学习投入”，还是社会学中的“制度信任”，都需要通过条目、行为指标或文本编码来实现操作化。问题在于，论文写作时常把理论框架写在引言，把测量细节丢到方法，而不再回到讨论部分核对“我最后讨论的，是否还是最初那个构念”。FieldFrame 因而将构念—指标映射提升为页面级核心对象，而非仅仅把它视作方法附录中的技术细节。</p>
+<h3>2.2 混合方法整合与三角互证</h3>
+<p>混合方法研究并不只是把问卷和访谈放在同一篇论文里，更关键的是不同材料之间如何形成互证而非彼此装饰。已有研究强调设计层面的并行、顺序与嵌入式整合，但在实际写作中，量化结果与质性引语往往只是并置出现。我们关注的不是“是否使用了两种方法”，而是表格中的统计变化、访谈中的叙事片段以及讨论中的解释命题之间是否构成闭环。</p>
+<h3>2.3 质性编码、引语使用与解释纪律</h3>
+<p>质性研究的可信度并不来自“引语看起来生动”，而来自引语、编码主题与研究问题之间的可追溯关系。常见的问题包括：引语被当作观点插图而不是证据、编码主题命名漂移、讨论时把一个个案经验写成普遍机制。针对这些问题，FieldFrame 引入引语—结论链接器，要求每个高强度解释句至少绑定一种明确材料类型与来源位点。</p>
+<h3>2.4 过度推断与学术写作支持系统</h3>
+<p>通用大模型和写作辅助系统极大提高了段落生成效率，但它们通常默认“更完整、更有力、更像结论”的表达更优。这种偏好在人文社科场景下会系统性地推高解释强度，尤其是在横截面调查、有限样本访谈或单案例研究中。与单纯润色不同，我们关注的是结论句能否与设计类型、样本边界和证据等级相匹配，从而压制不必要的因果化与规范化表述。</p>
+<h2 id="methodology">3. Methodology | 方法论</h2>
+<p>FieldFrame 的整体架构如图1所示。系统将一篇混合方法论文分解为五个可检查模块：主张图规划、构念操作化表、证据账本、引语—结论链接器与解释强度校准器。整体流程为：研究主题输入 → 主问题与子问题分解 → 构念与指标绑定 → 材料位点对齐 → 讨论强度校准 → 页面级质检与归档输出。</p>
+<div class="figure-wrapper">
+<div class="figure-container">
+<svg height="250" viewbox="0 0 980 250" width="100%" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrow" markerheight="6" markerwidth="6" orient="auto" refx="8" refy="5" viewbox="0 0 10 10">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b"></path>
+</marker>
+</defs>
+<rect fill="var(--bg-main)" height="250" width="980"></rect>
+<text fill="var(--text-primary)" font-size="18" font-weight="700" text-anchor="middle" x="490" y="34">图1 FieldFrame 的五阶段证据链校准流程</text>
+<text fill="var(--text-primary)" font-size="14" font-weight="600" text-anchor="middle" x="58" y="132">研究主题</text>
+<text fill="var(--text-primary)" font-size="12" text-anchor="middle" x="58" y="152">RQ / Scene</text>
+<g><rect fill="#165DFF" height="64" rx="10" width="145" x="110" y="92"></rect><text fill="white" font-size="14" font-weight="700" text-anchor="middle" x="182.5" y="118">主张图规划</text><text fill="white" font-size="12" text-anchor="middle" x="182.5" y="138">Claim Graph</text></g>
+<line marker-end="url(#arrow)" stroke="#64748b" stroke-width="2.5" x1="255" x2="285" y1="124" y2="124"></line>
+<g><rect fill="#0EA5E9" height="64" rx="10" width="145" x="285" y="92"></rect><text fill="white" font-size="14" font-weight="700" text-anchor="middle" x="357.5" y="118">构念操作化表</text><text fill="white" font-size="12" text-anchor="middle" x="357.5" y="138">Construct Table</text></g>
+<line marker-end="url(#arrow)" stroke="#64748b" stroke-width="2.5" x1="430" x2="460" y1="124" y2="124"></line>
+<g><rect fill="#10B981" height="64" rx="10" width="145" x="460" y="92"></rect><text fill="white" font-size="14" font-weight="700" text-anchor="middle" x="532.5" y="118">证据账本</text><text fill="white" font-size="12" text-anchor="middle" x="532.5" y="138">Evidence Ledger</text></g>
+<line marker-end="url(#arrow)" stroke="#64748b" stroke-width="2.5" x1="605" x2="635" y1="124" y2="124"></line>
+<g><rect fill="#F59E0B" height="64" rx="10" width="145" x="635" y="92"></rect><text fill="white" font-size="14" font-weight="700" text-anchor="middle" x="707.5" y="118">引语—结论链接</text><text fill="white" font-size="12" text-anchor="middle" x="707.5" y="138">Quote-Claim Linker</text></g>
+<line marker-end="url(#arrow)" stroke="#64748b" stroke-width="2.5" x1="780" x2="810" y1="124" y2="124"></line>
+<g><rect fill="#8B5CF6" height="64" rx="10" width="145" x="810" y="92"></rect><text fill="white" font-size="14" font-weight="700" text-anchor="middle" x="882.5" y="118">解释强度校准</text><text fill="white" font-size="12" text-anchor="middle" x="882.5" y="138">Modesty Calibrator</text></g>
+<path d="M 882 166 C 882 212, 180 212, 180 166" fill="none" marker-end="url(#arrow)" stroke="#94a3b8" stroke-dasharray="7 6" stroke-width="2.2"></path>
+<text fill="var(--text-secondary)" font-size="13" text-anchor="middle" x="488" y="226">页面质检反馈：若构念漂移、材料失锚或推断过强，则回流至主张图与操作化表重写</text>
+</svg>
+</div>
+<p class="figure-caption">图1 将研究主张、构念、材料与结论强度纳入同一检查闭环，是人文社科页面级一致性的关键。</p>
+</div>
+<h3>3.1 主张图与构念操作化表</h3>
+<p>我们首先从摘要、研究问题与章节提纲中提取主张节点，形成主张图 \(G=(V,E)\)。其中节点 \(v_i\) 对应一个需被论文支持的命题，边 \((v_i, v_j)\) 表示论证依赖关系。随后，系统为每个核心构念 \(c_i\) 构建操作化候选集合 \(O_i=\{o_{i1},\ldots,o_{im}\}\)，其元素可以是问卷条目、访谈主题、观察维度或文本编码标签。构念—操作化一致性定义为：</p>
+<p>\[
+    \mathrm{COC}=rac{1}{|C|}\sum_{c_i\in C} \max_{o\in O_i} \mathrm{sim}(c_i,o),
+    \]</p>
+<p>其中 \(\mathrm{sim}(\cdot,\cdot)\) 由术语相似度、定义句重合度和段落位置一致性共同决定。该步骤的目标不是自动发明更复杂的概念，而是约束作者后文讨论时不要悄悄更换研究对象。</p>
+<h3>3.2 证据账本与段落级锚定</h3>
+<p>对于正文中的每一个结果句或讨论句 \(p_k\)，系统维护一个证据账本 \(L(p_k)\)，其中记录该句所绑定的表格单元、统计结果、引语编号或场域记录位置。证据锚定得分定义为：</p>
+<p>\[
+    \mathrm{EAS}=rac{1}{|P|}\sum_{p_k\in P} w_k\,\mathbf{1}[|L(p_k)|&gt;0],
+    \]</p>
+<p>其中 \(w_k\) 反映句子在章节中的功能权重。讨论部分、结论部分的高强度语句具有更高权重，因此如果它们缺少材料位点，EAS 会显著下降。该设计迫使系统优先修复“说得最满但没有证据”的段落，而不是平均地润色所有句子。</p>
+<h3>3.3 引语—结论链接与解释强度校准</h3>
+<p>在质性材料中，最常见的问题并非没有引语，而是引语与最后写出的结论之间缺少清晰桥接。为此，我们构建引语—结论链接器，对每条引语赋予来源、主题编码与适用主张标签，并计算引语—结论落地率：</p>
+<p>\[
+    \mathrm{QCG}=rac{\sum_{q\in Q}\mathbf{1}[\exists v\in V,\, qightarrow v]}{|Q|}.
+    \]</p>
+<p>同时，系统为每个主张预测允许的解释等级 \(s_e\)，例如“描述性相关”“机制暗示”“有限外推”或“因果解释”；若实际措辞强度 \(s_c\) 超过允许等级，则记为一次过度推断。过度推断率定义为：</p>
+<p>\[
+    \mathrm{ORR}=rac{1}{|S|}\sum_{t\in S} \mathbf{1}[s_c(t) &gt; s_e(t)].
+    \]</p>
+<p>该模块尤其适用于横截面调查、有限样本访谈与单案例研究，因为这些研究最容易在讨论阶段出现“从观察到机制、从机制到政策”的连续跳跃。</p>
+<h3>3.4 方法透明度与页面级质检</h3>
+<p>除理论与材料对齐外，FieldFrame 还对样本来源、场域时间、招募方式、编码流程、互审机制与局限性表述进行透明度检查。我们把方法透明度指数记为 \(\mathrm{MTI}\)，它由六类必要信息槽位组成。若论文缺失样本规模、场域时段或编码一致性说明，系统不会试图“补写一个看起来合理的版本”，而是直接下调 MTI，并在页面级质检中给出缺失提示。与只追求页面完整的模板相比，这种做法更贴近领域写作的底线：宁可明确说明做不到，也不要写出无来源的完整叙事。</p>
+<h2 id="experiments">4. Experiments | 实验</h2>
+<p>本节所有结果均来自站内模拟归档基准，用于衡量一篇 <b>人文社科与教育</b> 稿件在概念操作化、证据锚定与解释强度控制方面的页面完成度，不代表任何真实期刊、会议或官方统计结论。我们关心的不是“能否生成一篇像论文的文本”，而是“能否生成一篇在研究问题、材料与讨论之间更少自相矛盾的页面”。</p>
+<h3>4.1 实验设置</h3>
+<p>数据集与评测集：我们构建 <b>SocArgument-7.2K</b> 作为训练与开发集合，并以 <b>MixedMethodBench-180</b> 作为页面级评测集。前者收录教育、社会学、传播、公共管理与高教研究中常见的调查、访谈与混合方法论文片段；后者包含 180 个人工整理的写作任务，其中定量、定性与混合方法各占三分之一，专门用于检验构念漂移、证据失锚与过度推断问题。</p>
+<p class="table-caption">表1 数据集组成与规模</p>
+<table class="paper-table">
+<thead><tr><th>组成部分</th><th>数量</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>理论定义—研究问题对</td><td>7,240</td><td>覆盖教育、公管、传播与社会学常见构念及其问题意识表述</td></tr>
+<tr><td>构念—问卷/观察指标映射</td><td>10,860</td><td>用于学习概念与条目、行为指标、场域记录的对齐关系</td></tr>
+<tr><td>访谈摘录与主题编码片段</td><td>13,420</td><td>支持引语—结论链接与主题命名一致性检查</td></tr>
+<tr><td>结果表格—讨论段落配对</td><td>6,180</td><td>标注统计结果、表格单元与讨论语句之间的引用链</td></tr>
+<tr><td><strong>MixedMethodBench-180</strong></td><td><strong>180</strong></td><td><strong>定量 / 定性 / 混合方法各 60 篇的页面级评测集</strong></td></tr>
+</tbody>
+</table>
+<p><strong>基线模型：</strong>我们选取 4 个代表性基线：<i>Template Essay</i>（通用模板写作器）、<i>CodebookWriter</i>（偏向质性编码组织）、<i>ScaleStory</i>（偏向问卷量表与统计结果撰写）以及 <i>TriangulationDraft</i>（强调混合方法整合的模块化系统）。所有方法均在相同任务提示、相同页面质检协议下进行评估。</p>
+<p><strong>评估指标：</strong>采用 5 项页面级指标：① 概念—操作化一致性（Concept–Operationalization Consistency, COC）；② 证据锚定得分（Evidence Anchoring Score, EAS）；③ 引语—结论落地率（Quote–Claim Grounding, QCG）；④ 方法透明度指数（Method Transparency Index, MTI）；⑤ 过度推断率（Overclaim Rate, ORR，越低越好）。此外，我们对 60 篇输出进行人工复核，三名评审者的 Krippendorff’s alpha 为 0.79。</p>
+<p><strong>实现细节：</strong>FieldFrame 以章节级提纲为输入，先生成主张图，再逐步补齐构念表与证据账本。系统并不会生成不存在的访谈引语或问卷结果，而是要求每一条结论句绑定来源位点；若材料不足，则优先降低结论强度而不是发明证据。</p>
+<h3>4.2 主实验结果</h3>
+<p class="table-caption">表2 主实验结果对比（除 ORR 外其余指标越高越好）</p>
+<table class="paper-table">
+<thead><tr><th>方法</th><th>COC↑</th><th>EAS↑</th><th>QCG↑</th><th>MTI↑</th><th>ORR↓</th></tr></thead>
+<tbody>
+<tr><td>Template Essay</td><td>74.6</td><td>68.9</td><td>62.4</td><td>71.3</td><td>18.7</td></tr>
+<tr><td>CodebookWriter</td><td>80.9</td><td>76.4</td><td>79.2</td><td>78.1</td><td>12.9</td></tr>
+<tr><td>ScaleStory</td><td>82.7</td><td>74.1</td><td>68.5</td><td>84.8</td><td>14.6</td></tr>
+<tr><td>TriangulationDraft</td><td>87.0</td><td>85.6</td><td>88.1</td><td>86.2</td><td>8.7</td></tr>
+<tr><td><strong>FieldFrame</strong></td><td><strong>90.8</strong></td><td><strong>90.1</strong></td><td><strong>91.4</strong></td><td><strong>89.5</strong></td><td><strong>6.1</strong></td></tr>
+</tbody>
+</table>
+<p>表2 表明，FieldFrame 在四项正向指标上均取得最佳结果，并把 ORR 压低到 6.1%。与侧重段落组织的 Template Essay 相比，FieldFrame 最大的提升来自 EAS 与 QCG，说明它并不是简单地把文字写得更像学术，而是更有效地把表格、引语与讨论命题绑定在一起。与 ScaleStory 相比，FieldFrame 在 MTI 之外进一步提升了 EAS 和 QCG，说明“量化写得规范”并不等于“整篇论文的证据链完整”。</p>
+<div class="figure-wrapper"><div class="figure-container"><img alt="主实验关键指标对比图" class="figure-img" src="assets/main-metrics.svg"/></div><p class="figure-caption">图2 MixedMethodBench-180 上的主实验结果。FieldFrame 在构念—操作化一致性、证据锚定和引语落地上均优于基线。</p></div>
+<div class="figure-wrapper"><div class="figure-container"><img alt="训练与验证损失曲线" class="figure-img" src="assets/loss-curves.svg"/></div><p class="figure-caption">图3 训练与验证损失收敛平稳，说明主张图规划与页面级质检可以协同优化，而不会互相牵制。</p></div>
+<h3>4.3 消融实验</h3>
+<p class="table-caption">表3 消融实验结果</p>
+<table class="paper-table">
+<thead><tr><th>设置</th><th>COC↑</th><th>EAS↑</th><th>ORR↓</th></tr></thead>
+<tbody>
+<tr><td>完整 FieldFrame</td><td>90.8</td><td>90.1</td><td>6.1</td></tr>
+<tr><td>- 无构念操作化表</td><td>84.3</td><td>86.8</td><td>8.9</td></tr>
+<tr><td>- 无证据账本</td><td>86.1</td><td>81.9</td><td>10.7</td></tr>
+<tr><td>- 无解释强度校准器</td><td>89.4</td><td>88.9</td><td>13.8</td></tr>
+<tr><td>- 无引语—结论链接器</td><td>88.0</td><td>85.0</td><td>8.2</td></tr>
+</tbody>
+</table>
+<p>消融结果显示，构念操作化表与证据账本共同支撑了页面的“能对上号”，而解释强度校准器则直接决定了系统是否会在讨论部分写过头。尤其在横截面调查与小样本访谈场景下，去掉校准器后 ORR 从 6.1% 跃升到 13.8%，说明社科写作中的很多问题并非来源于事实错误，而是来源于把有限材料写成了过强结论。</p>
+<div class="figure-wrapper"><div class="figure-container"><img alt="消融趋势图" class="figure-img" src="assets/ablation-trend.svg"/></div><p class="figure-caption">图4 消融实验表明，证据账本与解释强度校准器对降低过度推断尤为关键。</p></div>
+<h3>4.4 错误分析</h3>
+<p class="table-caption">表4 页面级错误统计</p>
+<table class="paper-table">
+<thead><tr><th>错误类型</th><th>修复前</th><th>修复后</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>概念名词与问卷条目错位</td><td>18</td><td>5</td><td>构念操作化表能显著抑制概念漂移</td></tr>
+<tr><td>引语不能支撑讨论判断</td><td>16</td><td>4</td><td>引语—结论链接器有效降低“漂亮引语”空转</td></tr>
+<tr><td>讨论中出现超出材料的因果推断</td><td>21</td><td>6</td><td>解释强度校准器是关键模块</td></tr>
+<tr><td>表格统计与结论强度不匹配</td><td>14</td><td>4</td><td>证据账本强化了表文对齐</td></tr>
+<tr><td>方法描述缺少样本/场域/编码流程</td><td>17</td><td>5</td><td>透明度检查器能够提示必要信息缺口</td></tr>
+</tbody>
+</table>
+<div class="figure-wrapper"><div class="figure-container"><img alt="错误分析图" class="figure-img" src="assets/error-analysis.svg"/></div><p class="figure-caption">图5 页面级错误在加入 FieldFrame 各模块后显著下降，其中“过度推断”与“概念漂移”改善最明显。</p></div>
+<h2 id="limitations">5. Limitations | 局限性分析</h2>
+<p>首先，FieldFrame 更适用于调查研究、访谈研究与混合方法设计，对于以文本细读、思想史辨析或规范理论建构为核心的人文学论文，其“构念—指标—证据位点”的框架并不总是适用。其次，系统对方法透明度和解释强度的偏好，可能会强化经验研究中的规范写法，却未必覆盖所有具有创造性的解释路径。最后，页面级一致性并不等于研究本身有效：如果前期研究设计薄弱、样本招募失衡或场域进入失败，FieldFrame 只能让这些问题被更清楚地暴露出来，不能替代真实研究训练。</p>
+<h2 id="ethics">6. Ethics Statement | 伦理声明</h2>
+<p>FieldFrame 不生成虚构受访者、伪造田野记录或臆造统计结果，也不鼓励用自动生成材料冒充真实研究证据。系统仅对作者已经提供的构念定义、量表条目、引语片段和结果表格进行组织与校准；对于涉及未成年人、脆弱群体或敏感议题的研究，系统要求显式标注伦理审批、匿名化处理与材料使用边界。我们的目标是帮助作者在页面层面更诚实地呈现证据，而不是更高效地包装结论。</p>
+<h2 id="conclusion">7. Conclusion | 结论</h2>
+<p>作为人文社科赛道的 001 号样稿，FieldFrame 试图回答一个比“如何写得更像论文”更重要的问题：一篇论文中的概念、材料与推断，能否在同一条证据链上对齐。实验表明，只要把主张图、构念操作化表和证据账本显式化，人文社科页面中大量看似“文风问题”的毛病，都会还原为更具体也更可修复的研究写作问题。换言之，好的社科文本不只是句子通顺，而是读者能清楚看到：作者究竟凭什么说到这一步，又为什么没有越界说更多。</p>
+<h2 id="acknowledgements">Acknowledgements | 致谢</h2>
+<p>感谢所有在修改论文时被导师追问“这个结论到底是哪张表、哪段引语支持的”同学；你们对材料边界的反复追索，为本样稿提供了最真实的问题原型。</p>
+<h2 id="references">References | 参考文献</h2>
+<ol class="reference-list">
+<li>[1] Creswell J W, Plano Clark V L. Designing and Conducting Mixed Methods Research[M]. Sage, 2017.</li>
+<li>[2] Maxwell J A. Qualitative Research Design: An Interactive Approach[M]. Sage, 2013.</li>
+<li>[3] Braun V, Clarke V. Using thematic analysis in psychology[J]. Qualitative Research in Psychology, 2006, 3(2): 77-101.</li>
+<li>[4] Miles M B, Huberman A M, Saldaña J. Qualitative Data Analysis: A Methods Sourcebook[M]. Sage, 2014.</li>
+<li>[5] Krippendorff K. Content Analysis: An Introduction to Its Methodology[M]. Sage, 2018.</li>
+<li>[6] DeVellis R F, Thorpe C T. Scale Development: Theory and Applications[M]. Sage, 2021.</li>
+<li>[7] Shadish W R, Cook T D, Campbell D T. Experimental and Quasi-Experimental Designs for Generalized Causal Inference[M]. Houghton Mifflin, 2002.</li>
+</ol>
+</div>
+</main>
+</div>
+</section>
+<!-- 页脚（和主站统一） -->
+<footer class="footer">
+<div class="container footer-bottom">
+<p>© 2026 ICMLpaper. 本网站纯属学术圈恶搞娱乐，与官方ICML无任何关系。</p>
+</div>
+</footer>
+<!-- 回到顶部按钮 -->
+<button class="back-to-top" id="back-to-top">
+<i class="fas fa-arrow-up"></i>
+</button>
+<!-- 交互JS -->
+<script>
+
+        const PAGE_LANG = "zh";
+        const LANG_TARGET = "index-en.html";
+        const THEME_KEY = "icmlpaper-theme";
+        const LANG_KEY = "icmlpaper-lang";
+        const html = document.documentElement;
+        const htmlEl = html;
+        const themeToggle = document.getElementById('theme-toggle');
+        const langToggle = document.getElementById('lang-toggle');
+
+        function updateThemeIcon() {
+            if (!themeToggle) return;
+            const icon = themeToggle.querySelector('i');
+            if (html.classList.contains('dark-theme')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        }
+
+        function updateLangToggle() {
+            if (!langToggle) return;
+            const label = langToggle.querySelector('.lang-label');
+            if (label) label.textContent = PAGE_LANG === 'zh' ? 'EN' : '中';
+            langToggle.setAttribute('title', PAGE_LANG === 'zh' ? 'Switch to English' : '切换到中文');
+        }
+
+        (function initPreferences() {
+            const savedTheme = localStorage.getItem(THEME_KEY);
+            if (savedTheme === 'dark') {
+                html.classList.add('dark-theme');
+            }
+            updateThemeIcon();
+            updateLangToggle();
+            const savedLang = localStorage.getItem(LANG_KEY);
+            if (savedLang && savedLang !== PAGE_LANG) {
+                location.replace(LANG_TARGET + location.hash);
+            }
+        })();
+
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                html.classList.toggle('dark-theme');
+                localStorage.setItem(THEME_KEY, html.classList.contains('dark-theme') ? 'dark' : 'light');
+                updateThemeIcon();
+            });
+        }
+
+        if (langToggle) {
+            langToggle.addEventListener('click', () => {
+                const nextLang = PAGE_LANG === 'zh' ? 'en' : 'zh';
+                localStorage.setItem(LANG_KEY, nextLang);
+                location.href = LANG_TARGET + location.hash;
+            });
+        }
+
+
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        const tocLinks = document.querySelectorAll('.toc-link');
+        const sections = document.querySelectorAll('.paper-content h2, .abstract-block');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.scrollY >= sectionTop - 120) {
+                    current = section.getAttribute('id');
+                }
+            });
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
