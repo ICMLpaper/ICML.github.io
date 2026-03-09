@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>生命医学-001：PathwayPatch: 面向组学结果、机制示意与图表叙事的一体化生医论文组织系统 | International Conference of MeaningLess Paper</title>
+<title>生命医学-001：PathwayPatch: 面向多组学论文的通路证据对齐、图表叙事耦合与结论强度校准框架 | International Conference of MeaningLess Paper</title>
     <!-- 外部资源（和主站完全统一） -->
     <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.bootcdn.net/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
@@ -345,13 +345,13 @@
                     <li><a href="#abstract" class="toc-link">摘要</a></li>
                     <li><a href="#introduction" class="toc-link">1. 引言</a></li>
                     <li><a href="#related-work" class="toc-link">2. 相关工作</a></li>
-                    <li><a href="#methodology" class="toc-link">3. 方法论</a></li>
+                    <li><a href="#methodology" class="toc-link">3. 方法</a></li>
                     <li><a href="#experiments" class="toc-link">4. 实验</a></li>
                     <li><a href="#limitations" class="toc-link">5. 局限性</a></li>
                     <li><a href="#ethics" class="toc-link">6. 伦理声明</a></li>
                     <li><a href="#conclusion" class="toc-link">7. 结论</a></li>
                     <li><a href="#acknowledgements" class="toc-link">致谢</a></li>
-                    <li><a href="#submission-note" class="toc-link">投稿说明</a></li>
+                    <li><a href="#submission-note" class="toc-link">投稿联系</a></li>
                     <li><a href="#references" class="toc-link">参考文献</a></li>
                 </ul>
                 <div class="paper-actions">
@@ -372,150 +372,212 @@
 
                 <div class="paper-header">
                     <span class="accept-badge">ICMLpaper 2025 录用论文</span>
-                    <h1>生命医学-001：PathwayPatch: 面向组学结果、机制示意与图表叙事的一体化生医论文组织系统</h1>
-                    <div class="authors">SingleCell侠<sup>1</sup>, Pathway Miner<sup>2</sup>, 匿名医学生信狗<sup>3,*</sup></div>
-                    <div class="affiliations"><sup>1</sup> 转录组叙事与图表工坊 | <sup>2</sup> 机制通路富集实验室<br><sup>3</sup> 某附属医院生物信息中心<br><sup>*</sup> 通讯作者：2072373170@qq.com</div>
+                    <h1>生命医学-001：PathwayPatch: 面向多组学论文的通路证据对齐、图表叙事耦合与结论强度校准框架</h1>
+                    <div class="authors">Lin Zhang<sup>1</sup>, Rui Chen<sup>2</sup>, 匿名生物信息研究者<sup>3,*</sup></div>
+                    <div class="affiliations"><sup>1</sup> 转化组学与证据整合实验室 | <sup>2</sup> 临床生物信息与队列方法中心<br><sup>3</sup> 某附属医院医学数据科学平台<br><sup>*</sup> 通讯作者：2072373170@qq.com</div>
                     <div class="paper-meta">
                         <span><strong>录用届数：</strong>ICMLpaper 2025 首届</span>
                         <span><strong>归档时间：</strong>2025年6月1日</span>
                         <span><strong>投稿方式：</strong>邮箱 / 小红书直投</span>
-                        <span><strong>所属领域：</strong>生命科学与医学 / 组学叙事</span>
+                        <span><strong>所属领域：</strong>生命科学与医学 / 多组学写作</span>
                     </div>
                 </div>
 
                 <div id="submission-note" class="abstract-block" style="margin-top: 1.2rem;">
-                    <h2>Submission Contact | 投稿联系</h2>
-                    <p>投稿请发送至 <a href="mailto:2072373170@qq.com">2072373170@qq.com</a>，或在小红书搜索 <code>ICMLpaper</code> 账号直投；建议附带论文 PDF、标题、作者、摘要与联系方式，便于生成归档页面。</p>
+                    <h2>投稿联系</h2>
+                    <p>投稿请发送至 <a href="mailto:2072373170@qq.com">2072373170@qq.com</a>，或在小红书搜索 <code>ICMLpaper</code> 账号直投。建议附带论文题目、作者、摘要、主要图表与正文 PDF；若稿件属于生物医学方向，建议额外说明数据类型、对照设计、验证层级与是否涉及临床解释，便于归档页准确呈现研究边界。</p>
                 </div>
 
                 <div id="abstract" class="abstract-block">
-                    <h2>Abstract | 摘要</h2>
-                    <p>在生命医学论文中，真正让读者出戏的往往不是算法复杂度，而是差异基因、富集通路、机制示意图与结论措辞之间的前后不一致。为解决“结果很多但故事讲不圆”的典型问题，本文提出 <b>PathwayPatch</b>——一个面向组学分析结果、图表组织与机制叙事的一体化生医论文组织系统。该方法将差异模块筛选、通路聚类、图表布局建议、术语校正与过度结论抑制整合在统一流程中，使论文从火山图、富集图到机制示意和摘要结论之间保持更高的一致性。基于 <b>OmicsNote-9K</b> 与 <b>BioFigureBench-180</b>，PathwayPatch 在机制一致性、图表完备率、术语精确度与归档就绪率上均优于通用基线，其中机制一致性得分达到 90.6%，过度结论率下降至 6.1%。本文不提供任何临床建议，仅作为 ICMLpaper 2025 生命医学赛道样稿，用于展示一篇生医风格页面如何在图、表、术语和论证层面更加自洽。</p>
+                    <h2>摘要</h2>
+                    <p>多组学论文的真正难点并不只在统计分析，而在于如何把对照设计、差异结果、通路富集、图表布局、机制解释与临床措辞组织成一条前后闭合的证据链。当前大量生命医学稿件在页面层面存在三类高频问题：其一，对照定义在摘要、正文与图注之间漂移；其二，通路富集结果与机制示意图、细胞状态命名之间缺少显式锚定；其三，相关性与预后结果被过早包装为因果机制或潜在治疗结论。针对上述问题，本文提出 <b>PathwayPatch</b>，一个面向多组学论文写作的页面级组织框架。该方法联合建模对照模式表、通路证据账本、图表—结论耦合器、因果措辞校准器与临床边界检查器，使一篇稿件在标题、摘要、结果图、机制示意与结论段之间保持更稳定的术语口径和证据强度。</p>
+                    <p>基于自建的 <b>MultiOmicsNote-8.4K</b> 与页面级评测集 <b>MechanismBench-220</b>，PathwayPatch 在通路落地得分、图表—结论对齐分、术语一致性分、因果措辞校准率与归档就绪率上分别达到 <b>91.7%</b>、<b>93.4%</b>、<b>94.1%</b>、<b>91.5%</b> 与 <b>89.6%</b>，相较最强基线均有稳定提升，同时将过度外推率降至 <b>5.3%</b>。本文不提供任何医学诊疗建议，亦不主张由相关性结果直接推出临床获益；其目的在于给出一篇更接近领域作者手工打磨质量的生命医学赛道中文样稿。</p>
                 </div>
 
-                <div class="keywords-block"><strong>关键词：</strong>生物信息学、组学分析、机制叙事、图表一致性、生命医学写作、通路富集</div>
+                <div class="keywords-block"><strong>关键词：</strong>多组学写作、通路证据对齐、机制图叙事、因果措辞校准、临床边界检查、生物医学文本组织</div>
 
                 <div class="citation-block">
                     <h3><i class="fas fa-quote-left"></i> 引用格式</h3>
                     <pre class="citation-code">@inproceedings{biomedicine001,
-  title={生命医学-001：PathwayPatch: 面向组学结果、机制示意与图表叙事的一体化生医论文组织系统},
-  author={SingleCell侠 and Pathway Miner and 匿名医学生信狗},
+  title={生命医学-001：PathwayPatch: 面向多组学论文的通路证据对齐、图表叙事耦合与结论强度校准框架},
+  author={Lin Zhang and Rui Chen and 匿名生物信息研究者},
   booktitle={International Conference of MeaningLess Paper},
   year={2025}
 }</pre>
                 </div>
 
                 <div class="paper-content">
-                    <h2 id="introduction">1. Introduction | 引言</h2>
-                    <p>生命医学论文常以“结果非常丰富”著称：差异表达、聚类、富集分析、GSEA、细胞通讯、预后模型、机制通路、示意图和验证实验层层叠加。然而页面越丰富，细节越容易失控。摘要里强调炎症反应，正文却把重点放到代谢重编程；机制图画的是 NF-κB，表格解释的却是 EMT；图注与统计描述缺少对应关系，最终形成一种“结果很多，但故事像拼图”的观感。</p><p>现有工具对生医写作的支持多停留在术语润色或图表美化层面，难以真正解决跨区域一致性问题。通用大模型能写得像论文，但往往会夸大机制解释；生物信息分析脚本能产出大量图，却不关心这些图能否在论文中讲出一条清晰主线；模板化写作工具则容易生成大量熟悉而空泛的句子。</p><p>本文提出 <b>PathwayPatch</b>，目标不是替代科研发现，而是让一篇组学论文的页面叙事更加完整。本文贡献包括：1）提出差异模块—通路主题—机制示意的统一组织流程；2）构建面向生医页面一致性的 OmicsNote-9K 与 BioFigureBench-180；3）定义机制一致性、图表完备率、术语精确度与过度结论率等指标；4）展示该系统如何减少“图很多但故事漂移”的常见页面级错误。</p>
+                    <h2 id="introduction">1. 引言</h2>
+                    <p>生命医学研究的写作对象并不是单一结果，而是一条跨层级证据链：样本如何分组、差异信号来自何种分子层面、富集通路是否与细胞状态一致、机制图是否真正解释了结果图、结论中哪些内容只是相关性提示、哪些内容已经接近机制推断。尤其在 RNA-seq、单细胞转录组、空间转录组、蛋白组和临床队列被同时纳入一篇论文时，页面质量的核心不再是“有没有分析”，而是这些分析是否被组织为稳定、可追踪、可复核的科学叙事。</p>
+                    <p>现实写作中，生物医学稿件常见的失败模式高度相似。摘要写的是“免疫抑制微环境重塑”，结果页却主要围绕代谢重编程展开；热图与富集图指向同一主题，但机制示意图却切换到另一条更“熟悉”的信号通路；单细胞结果只支持细胞状态关联，结论段却提前上升到疾病机制和治疗靶点；预后模型只能支持风险分层，最后一句却写成了潜在临床获益。此类问题并不一定来自统计错误，而更多来自页面组织阶段缺少显式约束。</p>
+                    <p>现有工具分别在差异分析、通路富集、图表绘制和语言润色上表现成熟，但很少有方法直接面向“论文页面中的证据对齐”建模。生信分析脚本能够生成火山图、GSEA 曲线和细胞通讯网络，却不负责维护这些图与标题、图注和结论段之间的一致关系；通用写作模型能生成流畅表述，却缺乏对对照设计、术语标准化与因果边界的稳健控制。这导致许多稿件在局部上看似专业，在整体上却暴露出明显的叙事断裂。</p>
+                    <p>为此，本文提出 PathwayPatch，将多组学论文组织任务重新定义为一个页面级证据对齐问题。核心思想是：先显式建模对照模式与术语账本，再在图表和结论之间建立受约束的映射关系，最后通过因果措辞校准器与临床边界检查器控制外推强度。本文的贡献主要体现在四点：第一，提出适用于生物医学写作的页面级错误分类，覆盖对照漂移、通路错锚、术语混用和临床过度暗示等高频问题；第二，设计通路证据账本与图表—结论耦合机制，使文字、表格和图示在更细粒度上共享锚点；第三，构建 MultiOmicsNote-8.4K 与 MechanismBench-220，用于训练和评测多组学页面组织质量；第四，实验表明该框架在通路落地、术语一致性和因果措辞校准方面均显著优于强基线。</p>
 
-                    <h2 id="related-work">2. Related Work | 相关工作</h2>
-                    <h3>2.1 组学分析与生医写作</h3><p>组学分析工具在差异筛选、富集统计和可视化方面已经高度成熟，但这些工具并不负责把结果组织成一篇叙事稳定的论文。生医写作的核心难点在于跨图表和跨段落的语义收束。</p><h3>2.2 机制解释与过度外推</h3><p>在生命医学领域，最常见的写作失误之一是从相关性结果直接跳到机制性结论。我们因此引入过度结论抑制模块，优先输出“支持/提示/相关”而非“证明/导致/治愈”等强断言措辞。</p><h3>2.3 图表布局与术语标准化</h3><p>火山图、热图、富集气泡图和机制示意图虽然常同时出现，但其标题、图注和术语未必一致。本文借助术语词表与图表布局建议，使结果描述在页面层面更统一。</p>
+                    <h2 id="related-work">2. 相关工作</h2>
+                    <h3>2.1 多组学分析流程与写作瓶颈</h3>
+                    <p>从 bulk RNA-seq 到单细胞、空间转录组与蛋白组，数据分析工具链已经高度成熟。差异分析、富集统计、轨迹推断、细胞通讯与预后建模均有相对稳定的软件生态。但这些工具主要服务于“得到结果”，并不负责“如何用同一套口径组织结果”。在多图、多表、跨模态结果共存的情形下，写作瓶颈往往出现在分析之后，而非分析本身。</p>
+                    <h3>2.2 通路解释与机制落地</h3>
+                    <p>通路富集方法能帮助研究者压缩高维差异信号，但从“富集到某条通路”到“该通路构成机制主线”之间仍存在明显鸿沟。真实写作中，作者往往会优先选择熟悉、经典、能讲故事的通路作为机制图核心，而忽略其与前文统计结果的精确对应关系。我们因此强调通路证据必须同时被正文、图注和机制示意图引用，避免单点证据被包装为全局主线。</p>
+                    <h3>2.3 图表叙事与结论强度控制</h3>
+                    <p>生医稿件中的图表不只是展示结果，更承担了“决定结论语气”的功能。若火山图只支持相关性变化，结论段就不应直接上升为因果干预；若预后曲线仅完成风险分层，则标题和摘要都不应暗示潜在治疗获益。现有语言模型虽然能模仿生医表达，但在结论强度校准上往往偏激进，容易把“提示”“关联”改写成“驱动”“证明”或“提供治疗策略”。</p>
+                    <h3>2.4 AI 辅助生物医学写作的边界</h3>
+                    <p>AI 可以帮助组织结果、保持术语一致和降低页面级低级错误，但并不能替代实验设计、生物学解释与临床验证。尤其在生命医学场景中，任何自动化写作系统都必须遵守两个底线：不能凭空生成未被证据支持的分子机制；不能把探索性统计结果包装成临床建议。本文的方法正是在这一边界下，讨论如何把一篇“可看”的页面打磨成一篇“更像领域作者写的”页面。</p>
 
-                    <h2 id="methodology">3. Methodology | 方法论</h2>
-                    <p>生命医学-001 的整体架构如图1所示，系统包含 5 个核心模块：模块筛选、通路聚类、图表布局、术语校正、结论抑制。整体流程为：主题输入 → 结构规划 → 内容组织 → 细节校正 → 页面质检 → 归档页面输出。</p>
-                    
+                    <h2 id="methodology">3. 方法</h2>
+                    <p>PathwayPatch 的总体流程如图1所示。系统首先解析题目与研究设定，构建包含队列、对照、分子层级、验证层级和禁用表述的对照模式表；随后，从正文段落、富集结果、图注与机制图中抽取共同锚点，维护通路证据账本；再由图表—结论耦合器约束每一幅图能够支撑的结论强度，最后通过因果措辞校准器和临床边界检查器回收高风险句子，形成可归档的最终页面。</p>
+
                     <div class="figure-wrapper">
                         <div class="figure-container">
-                            <svg width="100%" height="240" viewBox="0 0 980 240" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="100%" height="280" viewBox="0 0 980 280" xmlns="http://www.w3.org/2000/svg">
                                 <defs>
-                                    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-                                        <path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b" />
+                                    <linearGradient id="bioGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#0ea5e9"/>
+                                        <stop offset="100%" stop-color="#2563eb"/>
+                                    </linearGradient>
+                                    <marker id="arrowBio" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                                        <path d="M0 0 L10 5 L0 10 z" fill="#64748b"/>
                                     </marker>
                                 </defs>
-                                <rect width="980" height="240" fill="var(--bg-main)" />
-                                <text x="490" y="36" text-anchor="middle" fill="var(--text-primary)" font-size="18" font-weight="700">图1 生命医学-001 整体流程与质检闭环</text>
-                                <text x="55" y="126" text-anchor="middle" fill="var(--text-primary)" font-size="14" font-weight="600">主题输入</text>
-                                <text x="55" y="146" text-anchor="middle" fill="var(--text-primary)" font-size="12">Prompt</text>
-                                
-        <g>
-            <rect x="110" y="86" width="145" height="64" rx="10" fill="#165DFF"/>
-            <text x="182.5" y="113" text-anchor="middle" fill="white" font-size="14" font-weight="700">模块筛选</text>
-            <text x="182.5" y="134" text-anchor="middle" fill="white" font-size="12">Module Mining</text>
-        </g><line x1="255" y1="118" x2="283" y2="118" stroke="#64748b" stroke-width="2.4" marker-end="url(#arrow)"/>
-        <g>
-            <rect x="283" y="86" width="145" height="64" rx="10" fill="#4f46e5"/>
-            <text x="355.5" y="113" text-anchor="middle" fill="white" font-size="14" font-weight="700">通路聚类</text>
-            <text x="355.5" y="134" text-anchor="middle" fill="white" font-size="12">Pathway Theme</text>
-        </g><line x1="428" y1="118" x2="456" y2="118" stroke="#64748b" stroke-width="2.4" marker-end="url(#arrow)"/>
-        <g>
-            <rect x="456" y="86" width="145" height="64" rx="10" fill="#7c3aed"/>
-            <text x="528.5" y="113" text-anchor="middle" fill="white" font-size="14" font-weight="700">图表布局</text>
-            <text x="528.5" y="134" text-anchor="middle" fill="white" font-size="12">Figure Planner</text>
-        </g><line x1="601" y1="118" x2="629" y2="118" stroke="#64748b" stroke-width="2.4" marker-end="url(#arrow)"/>
-        <g>
-            <rect x="629" y="86" width="145" height="64" rx="10" fill="#9333ea"/>
-            <text x="701.5" y="113" text-anchor="middle" fill="white" font-size="14" font-weight="700">术语校正</text>
-            <text x="701.5" y="134" text-anchor="middle" fill="white" font-size="12">Term Guard</text>
-        </g><line x1="774" y1="118" x2="802" y2="118" stroke="#64748b" stroke-width="2.4" marker-end="url(#arrow)"/>
-        <g>
-            <rect x="802" y="86" width="130" height="64" rx="10" fill="#c026d3"/>
-            <text x="867.0" y="113" text-anchor="middle" fill="white" font-size="14" font-weight="700">结论抑制</text>
-            <text x="867.0" y="134" text-anchor="middle" fill="white" font-size="12">Claim Filter</text>
-        </g>
-                                <line x1="82" y1="118" x2="110" y2="118" stroke="#64748b" stroke-width="2.4" marker-end="url(#arrow)"/>
-                                <rect x="275" y="174" width="440" height="34" rx="17" fill="none" stroke="#94a3b8" stroke-dasharray="6 6" />
-                                <text x="495" y="196" text-anchor="middle" fill="var(--text-secondary)" font-size="12">细节错误回流：术语/数据口径/图文对应/作者与投稿联系信息</text>
+                                <rect width="980" height="280" fill="var(--bg-main)"/>
+                                <text x="490" y="34" text-anchor="middle" fill="var(--text-primary)" font-size="18" font-weight="700">图1 PathwayPatch 的多组学页面组织与风险校准框架</text>
+                                <text x="54" y="134" text-anchor="middle" fill="var(--text-primary)" font-size="14" font-weight="600">研究设定</text>
+                                <text x="54" y="154" text-anchor="middle" fill="var(--text-secondary)" font-size="12">队列 / 对照 / 模态</text>
+                                <g><rect x="110" y="96" width="132" height="72" rx="12" fill="url(#bioGrad)"/><text x="176" y="123" text-anchor="middle" fill="white" font-size="14" font-weight="700">对照模式表</text><text x="176" y="145" text-anchor="middle" fill="white" font-size="12">病例-对照 / 高低风险</text></g>
+                                <g><rect x="272" y="96" width="142" height="72" rx="12" fill="url(#bioGrad)"/><text x="343" y="123" text-anchor="middle" fill="white" font-size="14" font-weight="700">证据账本</text><text x="343" y="145" text-anchor="middle" fill="white" font-size="12">通路、细胞状态、验证层级</text></g>
+                                <g><rect x="444" y="96" width="150" height="72" rx="12" fill="url(#bioGrad)"/><text x="519" y="123" text-anchor="middle" fill="white" font-size="14" font-weight="700">图表—结论耦合器</text><text x="519" y="145" text-anchor="middle" fill="white" font-size="12">图注、结果段、摘要联动</text></g>
+                                <g><rect x="624" y="96" width="150" height="72" rx="12" fill="url(#bioGrad)"/><text x="699" y="123" text-anchor="middle" fill="white" font-size="14" font-weight="700">措辞校准器</text><text x="699" y="145" text-anchor="middle" fill="white" font-size="12">相关、机制、临床分级</text></g>
+                                <g><rect x="804" y="96" width="120" height="72" rx="12" fill="url(#bioGrad)"/><text x="864" y="123" text-anchor="middle" fill="white" font-size="14" font-weight="700">边界检查</text><text x="864" y="145" text-anchor="middle" fill="white" font-size="12">过度外推与敏感表述</text></g>
+                                <line x1="78" y1="130" x2="110" y2="130" stroke="#64748b" stroke-width="2.4" marker-end="url(#arrowBio)"/>
+                                <line x1="242" y1="130" x2="272" y2="130" stroke="#64748b" stroke-width="2.4" marker-end="url(#arrowBio)"/>
+                                <line x1="414" y1="130" x2="444" y2="130" stroke="#64748b" stroke-width="2.4" marker-end="url(#arrowBio)"/>
+                                <line x1="594" y1="130" x2="624" y2="130" stroke="#64748b" stroke-width="2.4" marker-end="url(#arrowBio)"/>
+                                <line x1="774" y1="130" x2="804" y2="130" stroke="#64748b" stroke-width="2.4" marker-end="url(#arrowBio)"/>
+                                <rect x="220" y="204" width="540" height="40" rx="20" fill="none" stroke="#94a3b8" stroke-dasharray="6 6"/>
+                                <text x="490" y="229" text-anchor="middle" fill="var(--text-secondary)" font-size="12">回流修正：对照定义漂移、通路错锚、细胞亚群命名不一致、机制断言过强、临床暗示超出证据边界</text>
                             </svg>
                         </div>
-                        <p class="figure-caption">图1 生命医学-001 的五阶段组织流程与页面级质检闭环</p>
+                        <p class="figure-caption">图1 系统围绕“对照—通路—图表—结论”四级链路进行显式约束，而非仅做表面语言润色。</p>
                     </div>
 
-                    <h3>3.1 差异模块与通路主题匹配</h3><p>我们将差异模块与通路主题的匹配度建模为模块富集与术语覆盖的组合：</p><div class="formula-wrapper">\[ a(m,p) = \mu \cdot \text{Enrich}(m,p) + (1-\mu) \cdot \text{TermCover}(m,p) \]<span class="formula-number">(1)</span></div><h3>3.2 机制一致性建模</h3><p>为控制机制图与正文叙事的一致性，定义机制一致性分数：</p><div class="formula-wrapper">\[ \text{MCS}(d) = \frac{1}{|\mathcal{T}|}\sum_{t \in \mathcal{T}} \mathbb{I}[t \in G_d \cap B_d] \times 100\% \]<span class="formula-number">(2)</span></div><h3>3.3 过度结论风险过滤</h3><p>对于结论句中的强断言，我们使用风险过滤函数：</p><div class="formula-wrapper">\[ r(c) = \sigma( w^\top f(c) ) \quad ; \quad c \text{ is softened if } r(c) > \tau \]<span class="formula-number">(3)</span></div><h3>3.4 归档就绪率定义</h3><p>归档就绪率由图表、术语与结论三类检查共同决定：</p><div class="formula-wrapper">\[ \text{ARR} = \frac{N_{\text{layout}} \cap N_{\text{term}} \cap N_{\text{claim}}}{N_{\text{all}}} \times 100\% \]<span class="formula-number">(4)</span></div>
+                    <h3>3.1 问题定义</h3>
+                    <p>我们将一篇多组学论文页表示为结构化对象 \(D = \{C, P, F, Y, M\}\)，其中 \(C\) 表示对照模式表，记录队列来源、病例与对照定义、分层标准及分析模态；\(P\) 表示通路与细胞状态锚点集合；\(F\) 表示图、表及其图注；\(Y\) 表示摘要、结果段和结论中的主张集合；\(M\) 表示归档元信息。给定主题输入 \(x\) 与页面模式 \(S_c\)，系统目标写为：</p>
+                    <div class="formula-wrapper">\[ \hat D = \arg\max_D \log P_\theta(D\mid x, S_c, L) - \lambda_1 \Omega_{\text{drift}}(D) - \lambda_2 \Omega_{\text{overclaim}}(D) \]
+<span class="formula-number">(1)</span></div>
+                    <p>其中 \(L\) 为通路证据账本，\(\Omega_{\text{drift}}\) 惩罚对照、术语与通路锚点在页面不同区域中的漂移，\(\Omega_{\text{overclaim}}\) 惩罚由弱证据直接跳到机制或临床结论的高风险表述。</p>
 
-                    <h2 id="experiments">4. Experiments | 实验</h2>
-                    <p>本节所有结果均来自站内模拟归档基准，用于衡量一篇 生命科学与医学 稿件在页面组织、一致性与归档展示层面的完成度，不代表任何真实会议、期刊或官方统计结论。</p>
+                    <h3>3.2 对照模式表与通路证据账本</h3>
+                    <p>生物医学写作最常见的裂缝来自“比较对象在不同位置被悄悄改写”。因此我们为每篇稿件维护对照模式表，显式记录样本来源、分组逻辑、方向性与验证层级，并把所有正文、图注和标题中的关键名词映射到统一键空间。随后，系统以通路名、细胞亚群名、分子层级和实验验证方式为核心字段构建证据账本。对第 \(i\) 个主题的通路落地得分定义为：</p>
+                    <div class="formula-wrapper">\[ \mathrm{PGS}_i = \frac{\left|E_i^{\text{text}} \cap E_i^{\text{fig}} \cap E_i^{\text{path}}\right|}{\left|E_i^{\text{text}} \cup E_i^{\text{fig}} \cup E_i^{\text{path}}\right|} \]
+<span class="formula-number">(2)</span></div>
+                    <p>其中 \(E_i^{\text{text}}\)、\(E_i^{\text{fig}}\) 和 \(E_i^{\text{path}}\) 分别表示正文、图表与通路结果中被抽取到的同主题实体集合。该定义强调一条机制主线必须同时被文字、图表和统计结果支撑，而不是由单个区域“独唱”。</p>
+
+                    <h3>3.3 图表—结论耦合与术语一致性控制</h3>
+                    <p>在生成结果段落时，系统并不是先写一段“像论文的话”，再去寻找可放置的图，而是反向依据图表槽位决定可宣称的结论强度。每幅图都会被绑定到一组允许的结论标签，例如“差异表达支持表型关联”“富集分析支持功能主题”“预后曲线支持风险分层”“机制图仅作解释性示意”。我们通过图表—结论对齐分衡量图注与对应结论之间的一致性：</p>
+                    <div class="formula-wrapper">\[ \mathrm{CFA} = \frac{1}{|F|}\sum_{f\in F} \mathrm{sim}\big(h(c_f), h(y_f)\big) \cdot \mathbb{I}[\ell(y_f) \preceq b(f)] \]
+<span class="formula-number">(3)</span></div>
+                    <p>其中 \(c_f\) 为图注，\(y_f\) 为关联结论句，\(\ell(y_f)\) 表示结论强度等级，\(b(f)\) 表示该图所允许的最大结论边界。术语一致性检查则进一步约束同一细胞亚群、同一路径和同一分组标签在全篇内采用统一命名。</p>
+
+                    <h3>3.4 因果措辞校准与临床边界检查</h3>
+                    <p>PathwayPatch 对结论句执行三级校准：相关性层、机制提示层和临床暗示层。系统利用句法、证据类型和实体角色构建风险向量，若一句话的强度等级高于其证据支撑层级，则自动回收为更保守表述。其风险函数表示为：</p>
+                    <div class="formula-wrapper">\[ r(y)=\sigma\left(w^\top [g(y), z_{\text{evi}}(y), z_{\text{clin}}(y)]\right),\quad y\ \text{is softened if}\ r(y)>\tau \]
+<span class="formula-number">(4)</span></div>
+                    <p>其中 \(g(y)\) 编码句子的因果强度词，\(z_{\text{evi}}(y)\) 表示证据级别，\(z_{\text{clin}}(y)\) 表示是否触及治疗、获益或应用建议等高风险表述。该模块特别抑制“潜在治疗靶点”“提示临床应用价值”等在生物医学写作中最容易越界的句式。</p>
+
+                    <h3>3.5 归档就绪率</h3>
+                    <p>一篇页面最终是否可归档，不只取决于正文是否流畅，还取决于结构、术语、图表和边界表述是否同时通过检查。我们定义归档就绪率为：</p>
+                    <div class="formula-wrapper">\[ \mathrm{ARR}=\frac{N_{\text{layout}}\cap N_{\text{term}}\cap N_{\text{ground}}\cap N_{\text{claim}}}{N_{\text{all}}}\times 100\% \]
+<span class="formula-number">(5)</span></div>
+                    <p>其中四项检查分别对应页面结构完整性、术语一致性、通路落地程度与结论强度合法性。只有四者同时满足，页面才被视为真正达到“可挂页”的状态。</p>
+
+                    <h2 id="experiments">4. 实验</h2>
+                    <p>本节所有结果均来自站内模拟归档基准，用于衡量一篇生命医学稿件在页面组织、术语对齐和结论边界控制方面的完成度，不代表任何真实临床结论、真实会议统计或真实药物推荐。</p>
 
                     <h3>4.1 实验设置</h3>
-                    <p><strong>数据集与评测集：</strong>生命医学赛道的 001 号样稿。本文聚焦差异分析、富集通路、机制示意图与结论表述之间的高频脱节问题，构建一个更适合生医论文页面组织的统一框架。 我们进一步构建了相应的训练与评测数据，用于量化页面级一致性。</p>
-                    <p class="table-caption">表1 数据集组成与规模</p>
+                    <p><strong>数据集。</strong> 我们构建 <b>MultiOmicsNote-8.4K</b> 作为训练与开发语料，覆盖 bulk RNA-seq、单细胞转录组、空间转录组、蛋白组和临床预后分析等常见页面。与此同时，构建页面级评测集 <b>MechanismBench-220</b>，包含 220 个需要同时组织“结果—图表—机制—结论”的主题任务，分布于肿瘤微环境、炎症与免疫、代谢重编程、药物反应和预后分层五大场景。</p>
+                    <p><strong>标注协议。</strong> 每个评测样本均由两名具备组学阅读经验的标注者独立检查，并对对照定义、术语一致性、结论强度和图表支持关系进行打分，双标注 Cohen's kappa 为 0.84。对于临床相关表述，只有当结果同时包含明确验证层级时，系统才允许生成高于“提示性”语气的表述。</p>
+                    <p><strong>评估指标。</strong> 我们采用通路落地得分（PGS）、图表—结论对齐分（CFA）、术语一致性分（TCS）、因果措辞校准率（CCR）、归档就绪率（ARR）与过度外推率（OCR，越低越好）六项指标。其中 CCR 反映结论语气与证据强度的一致程度，是本节最关键的生命医学特有指标之一。</p>
+                    <p class="table-caption">表1 MultiOmicsNote-8.4K 与 MechanismBench-220 的数据组成</p>
                     <table class="paper-table">
-                        <thead><tr><th>组成部分</th><th>数量</th><th>说明</th></tr></thead>
-                        <tbody><tr><td>公开组学分析页面</td><td>9,180</td><td>覆盖 RNA-seq、单细胞、蛋白组与临床队列结果页面</td></tr><tr><td>机制示意图描述对</td><td>6,420</td><td>用于学习图注与机制主线的对应关系</td></tr><tr><td>生医术语标准词表</td><td>18,600</td><td>包含通路、细胞状态、疾病名与功能描述</td></tr><tr><td>结论风险样本</td><td>5,240</td><td>标注过强断言、治疗暗示与证据不足结论</td></tr><tr><td><strong>评测集 BioFigureBench-180</strong></td><td><strong>180</strong></td><td><strong>覆盖 5 类组学论文场景的页面级评测集</strong></td></tr></tbody>
+                        <thead><tr><th>数据来源</th><th>内容类型</th><th>数量</th><th>用途</th></tr></thead>
+                        <tbody>
+                            <tr><td>公开多组学结果页</td><td>差异分析、富集、预后、药物反应</td><td>8,420 页</td><td>训练页面级结构与生医语体</td></tr>
+                            <tr><td>图注—机制对应对</td><td>火山图、热图、GSEA、机制示意图</td><td>6,180 对</td><td>监督图表—结论耦合</td></tr>
+                            <tr><td>对照模式标注集</td><td>病例-对照、高低风险、治疗前后等</td><td>4,960 条</td><td>学习分组逻辑与方向性</td></tr>
+                            <tr><td>因果措辞校准语料</td><td>相关、机制、临床应用分级句</td><td>5,540 条</td><td>抑制过强结论与临床越界</td></tr>
+                            <tr><td>生医术语与通路词表</td><td>通路、细胞状态、疾病、验证层级</td><td>21,300 项</td><td>术语标准化与账本约束</td></tr>
+                            <tr><td><strong>MechanismBench-220</strong></td><td><strong>页面级综合评测任务</strong></td><td><strong>220 题</strong></td><td><strong>统一测试页面组织与证据闭环质量</strong></td></tr>
+                        </tbody>
                     </table>
-                    <p><strong>基线模型：</strong>我们选取 4 个具有代表性的模板化或模块化基线，与本文系统在相同主题提示集上进行对比，统一采用页面检查器与人工抽样复核进行评估。</p>
-                    <p><strong>评估指标：</strong>评估指标包括：① 机制一致性（Mechanism Consistency Score, MCS）；② 图表完备率（Figure Completeness Rate, FCR）；③ 术语精确度（Terminology Precision, TP）；④ 归档就绪率（ARR）；⑤ 过度结论率（Overclaim Rate, OCR，越低越好）。</p>
-                    <p><strong>实现细节：</strong>PathwayPatch 结合富集统计、术语词表与页面级生成器实现，在 180 个生医主题任务上进行自动评测，并由具备组学阅读经验的标注者抽样复核。</p>
 
                     <h3>4.2 主实验结果</h3>
-                    <p class="table-caption">表2 主实验结果对比（除 M2/M5 外其余指标越高越好）</p>
+                    <p>我们将 PathwayPatch 与四类强基线比较：通用长文模型、模板化多组学写作器、以图为中心的结果叙事器和专门约束结论强度的校准系统。表2显示，PathwayPatch 在所有核心指标上均取得最优表现，特别是在 PGS、CCR 和 ARR 上优势最明显。这说明提升生医稿件质量的关键并非“把语气写得更像论文”，而是把对照定义、通路证据、图表支持和结论强度组织为同一套受约束链路。</p>
+                    <p class="table-caption">表2 主实验结果对比</p>
                     <table class="paper-table">
-                        <thead><tr><th>方法</th><th>MCS↑</th><th>FCR↑</th><th>TP↑</th><th>ARR↑</th><th>OCR↓</th></tr></thead>
-                        <tbody><tr><td>Generic LLM</td><td>74.8</td><td>78.5</td><td>82.1</td><td>71.4</td><td>14.7</td></tr><tr><td>Figure-Only Planner</td><td>77.2</td><td>84.3</td><td>79.6</td><td>73.0</td><td>12.8</td></tr><tr><td>BioTemplate Writer</td><td>81.6</td><td>85.0</td><td>86.8</td><td>79.4</td><td>10.2</td></tr><tr><td>MechanismGuard</td><td>86.4</td><td>87.9</td><td>89.1</td><td>84.5</td><td>7.4</td></tr><tr><td>PathwayPatch</td><td>90.6</td><td>92.8</td><td>93.3</td><td>88.7</td><td>6.1</td></tr></tbody>
+                        <thead><tr><th>方法</th><th>PGS↑</th><th>CFA↑</th><th>TCS↑</th><th>CCR↑</th><th>ARR↑</th><th>OCR↓</th></tr></thead>
+                        <tbody>
+                            <tr><td>Generic LLM</td><td>73.9</td><td>76.4</td><td>81.2</td><td>69.8</td><td>70.4</td><td>13.9</td></tr>
+                            <tr><td>OmicsTemplate Writer</td><td>79.1</td><td>80.3</td><td>85.7</td><td>74.5</td><td>75.8</td><td>11.2</td></tr>
+                            <tr><td>FigureNarrator</td><td>81.5</td><td>87.2</td><td>84.9</td><td>72.6</td><td>78.1</td><td>12.4</td></tr>
+                            <tr><td>ClaimGuard</td><td>86.8</td><td>88.5</td><td>90.1</td><td>88.2</td><td>84.9</td><td>7.1</td></tr>
+                            <tr><td><strong>PathwayPatch</strong></td><td><strong>91.7</strong></td><td><strong>93.4</strong></td><td><strong>94.1</strong></td><td><strong>91.5</strong></td><td><strong>89.6</strong></td><td><strong>5.3</strong></td></tr>
+                        </tbody>
                     </table>
-                    <div class="figure-wrapper"><div class="figure-container"><img class="figure-img" src="assets/main-metrics.svg" alt="主实验关键指标对比图"></div><p class="figure-caption">图2 BioFigureBench-180 上的主实验结果，PathwayPatch 在机制一致性与图表完备率上显著领先</p></div>
-                    <div class="figure-wrapper"><div class="figure-container"><img class="figure-img" src="assets/loss-curves.svg" alt="训练与验证损失曲线"></div><p class="figure-caption">图3 训练与验证损失整体收敛稳定，说明该赛道样稿的页面生成与质检模块可以协同优化</p></div>
+                    <div class="figure-wrapper"><div class="figure-container"><img class="figure-img" src="assets/main-metrics.svg" alt="主实验关键指标对比图"></div><p class="figure-caption">图2 PathwayPatch 在通路落地、图表—结论对齐与因果措辞校准上均显著优于基线，说明多组学写作质量提升来自链路级约束而非单点润色。</p></div>
+                    <div class="figure-wrapper"><div class="figure-container"><img class="figure-img" src="assets/loss-curves.svg" alt="训练与验证损失曲线"></div><p class="figure-caption">图3 训练过程中，通路落地损失与结论校准损失均呈稳定下降趋势，未出现后期过拟合导致的语气失控现象。</p></div>
 
                     <h3>4.3 消融实验</h3>
+                    <p>为验证各模块的独立贡献，我们分别移除对照模式表、证据账本、图表—结论耦合器和因果措辞校准器。结果如表3所示：去除对照模式表后，病例-对照与高低风险等分组描述更易漂移，直接拖累 PGS 与 ARR；去除证据账本会明显破坏通路与术语的一致性；去除图表—结论耦合器则主要损害 CFA；去除因果措辞校准器后，虽然表面内容仍像论文，但结论强度迅速失控，CCR 和 ARR 均明显下降。</p>
                     <p class="table-caption">表3 消融实验结果</p>
                     <table class="paper-table">
-                        <thead><tr><th>设置</th><th>MCS↑</th><th>FCR↑</th><th>OCR↓</th></tr></thead>
-                        <tbody><tr><td>完整 PathwayPatch</td><td>90.6</td><td>92.8</td><td>6.1</td></tr><tr><td>- 无术语校正</td><td>86.8</td><td>89.1</td><td>8.8</td></tr><tr><td>- 无结论抑制</td><td>88.2</td><td>91.0</td><td>13.6</td></tr><tr><td>- 无图表布局建议</td><td>87.5</td><td>85.6</td><td>7.3</td></tr></tbody>
+                        <thead><tr><th>模型配置</th><th>PGS↑</th><th>CFA↑</th><th>CCR↑</th><th>ARR↑</th></tr></thead>
+                        <tbody>
+                            <tr><td>完整 PathwayPatch</td><td>91.7</td><td>93.4</td><td>91.5</td><td>89.6</td></tr>
+                            <tr><td>- 无对照模式表</td><td>87.1</td><td>89.4</td><td>86.2</td><td>82.7</td></tr>
+                            <tr><td>- 无证据账本</td><td>84.8</td><td>87.0</td><td>80.6</td><td>78.9</td></tr>
+                            <tr><td>- 无图表—结论耦合器</td><td>88.4</td><td>85.2</td><td>89.1</td><td>81.6</td></tr>
+                            <tr><td>- 无因果措辞校准器</td><td>90.2</td><td>92.1</td><td>74.4</td><td>79.8</td></tr>
+                        </tbody>
                     </table>
-                    <div class="figure-wrapper"><div class="figure-container"><img class="figure-img" src="assets/ablation-trend.svg" alt="消融趋势图"></div><p class="figure-caption">图4 消融结果显示，术语校正与结论抑制对稳定控制生医叙事最重要</p></div>
+                    <div class="figure-wrapper"><div class="figure-container"><img class="figure-img" src="assets/ablation-trend.svg" alt="消融趋势图"></div><p class="figure-caption">图4 消融结果说明，生医稿件最关键的并非单一模块，而是“对照、证据、图表、措辞”四者形成的协同闭环。</p></div>
 
-                    <h3>4.4 错误分析</h3>
+                    <h3>4.4 错误分析与案例观察</h3>
+                    <p>我们进一步统计了页面级最常见的五类生命医学写作错误。表4显示，PathwayPatch 对“通路标签与机制图不一致”“对照定义漂移”和“将预后相关性包装为治疗结论”等高风险错误有明显抑制效果。需要特别指出的是，系统并不是简单删掉结论句，而是把原先越界的句子回退到证据真正能支持的语气层级，例如把“该通路驱动疾病进展并提示潜在治疗靶点”回收为“该通路与疾病进展相关，并为后续机制验证提供线索”。</p>
                     <p class="table-caption">表4 页面级错误统计</p>
                     <table class="paper-table">
-                        <thead><tr><th>错误类型</th><th>Before</th><th>After</th><th>说明</th></tr></thead>
-                        <tbody><tr><td>机制图与正文主题不符</td><td>18</td><td>5</td><td>通路聚类后大幅减少</td></tr><tr><td>术语混用/缩写错配</td><td>21</td><td>7</td><td>术语标准化是关键</td></tr><tr><td>火山图/热图顺序失衡</td><td>14</td><td>4</td><td>图表布局建议改善阅读流</td></tr><tr><td>结论强断言过多</td><td>16</td><td>3</td><td>Claim Filter 抑制过度外推</td></tr><tr><td>临床暗示超出证据范围</td><td>9</td><td>2</td><td>仅保留“提示性”表述</td></tr></tbody>
+                        <thead><tr><th>错误类型</th><th>原始自动稿</th><th>PathwayPatch</th><th>说明</th></tr></thead>
+                        <tbody>
+                            <tr><td>对照定义漂移</td><td>15</td><td>3</td><td>病例-对照与高低风险标签混用显著减少</td></tr>
+                            <tr><td>通路标签与机制图不一致</td><td>19</td><td>4</td><td>机制图被强制锚定到正文通路主题</td></tr>
+                            <tr><td>细胞亚群命名前后不一致</td><td>17</td><td>5</td><td>统一词表有效降低别名漂移</td></tr>
+                            <tr><td>图注支持不足却上升为机制断言</td><td>14</td><td>3</td><td>图表—结论耦合器抑制跨级外推</td></tr>
+                            <tr><td>将预后相关性包装为治疗结论</td><td>11</td><td>2</td><td>临床边界检查器保留提示性措辞</td></tr>
+                        </tbody>
                     </table>
-                    <div class="figure-wrapper"><div class="figure-container"><img class="figure-img" src="assets/error-analysis.svg" alt="错误分析图"></div><p class="figure-caption">图5 页面级错误在加入质检与映射模块前后的数量变化</p></div>
+                    <div class="figure-wrapper"><div class="figure-container"><img class="figure-img" src="assets/error-analysis.svg" alt="错误分析图"></div><p class="figure-caption">图5 引入通路证据账本与边界检查后，最影响可信度的生医页面级错误显著下降。</p></div>
+                    <p>在定性案例中，我们观察到 PathwayPatch 最有价值的一点并不是“更会写机制故事”，而是更懂得何时停下。面对只有相关性支持的结果，系统倾向于输出“提示”“关联”“值得进一步验证”之类的保守结论，而不会贸然引入治疗、靶向或临床获益等更高层级的语言。对于生命医学写作而言，这种克制往往比华丽措辞更重要。</p>
 
-                    <h2 id="limitations">5. Limitations | 局限性分析</h2>
-                    <p>PathwayPatch 主要服务于页面组织与术语一致性，不能替代真实的生物学验证。对于高度新颖或命名尚未标准化的分子机制，系统的词表约束可能偏保守；此外，机制图的正确性仍依赖研究者的专业判断。</p>
+                    <h2 id="limitations">5. 局限性</h2>
+                    <p>PathwayPatch 解决的是页面级组织和证据对齐问题，而不是生物学真实性本身。若原始分析结果存在批次效应、样本量不足、对照不合理或注释错误，系统无法在页面层面修复这些研究设计缺陷。对于高度新颖、尚未形成标准命名的通路或细胞状态，词表约束可能偏保守，从而抑制部分创新表达。此外，机制图的科学正确性最终仍依赖领域研究者和后续实验验证，系统只能降低“写得太过头”的概率，不能替代真正的机制研究。</p>
 
-                    <h2 id="ethics">6. Ethics Statement | 伦理声明</h2>
-                    <p>本文不提供医学诊疗建议，也不生成可直接用于临床决策的结论。系统输出仅用于科研页面组织，使用时应避免将相关性结果包装为治疗因果。</p>
+                    <h2 id="ethics">6. 伦理声明</h2>
+                    <p>本文不生成医学诊疗建议，不输出可直接用于临床决策的文本，也不鼓励将探索性组学结果包装为临床应用结论。若稿件涉及患者数据、药物反应或疾病分层，使用者应确保数据合规、去标识化处理以及研究伦理审查已经完成。系统输出只能作为科研写作辅助，不应替代医师判断、伦理审查或实验验证。</p>
 
-                    <h2 id="conclusion">7. Conclusion | 结论</h2>
-                    <p>作为生命医学赛道的 001 号样稿，PathwayPatch 说明了一篇生医论文真正需要修复的并非“字不够学术”，而是图、表、术语与结论之间的叙事裂缝。通过模块化组织和过度结论抑制，我们让页面更像一篇能被认真阅读的论文。</p>
+                    <h2 id="conclusion">7. 结论</h2>
+                    <p>本文面向多组学论文写作提出 PathwayPatch，将生命医学稿件最常见的问题——对照漂移、通路错锚、图表与结论脱节以及临床措辞越界——统一纳入页面级约束框架。实验表明，真正决定一篇生医页面专业感的，不是堆多少术语，而是能否在证据层级、图表叙事和结论边界之间保持持续一致。对生命医学赛道而言，这种“有边界的完整性”比单纯的语言流畅更接近专业写作的核心要求。</p>
 
-                    <h2 id="acknowledgements">Acknowledgements | 致谢</h2>
-                    <p>感谢所有在火山图、热图和富集图之间反复横跳的生信同仁；正是你们的图表密度，迫使我们认真思考什么叫“机制叙事的一致性”。</p>
+                    <h2 id="acknowledgements">致谢</h2>
+                    <p>感谢所有在火山图、热图、GSEA 曲线、细胞注释和生存曲线之间来回切换的研究者。正是这些真实写作中的高频挣扎，使我们意识到：生物医学论文最需要修复的往往不是分析流程，而是证据如何被诚实地讲述。</p>
 
-                    <h2 id="references">References | 参考文献</h2>
-                    <ol class="reference-list"><li>[1] Subramanian A, Tamayo P, Mootha V K, et al. Gene set enrichment analysis[J]. PNAS, 2005, 102(43): 15545-15550.</li><li>[2] Stuart T, Butler A, Hoffman P, et al. Comprehensive integration of single-cell data[J]. Cell, 2019, 177(7): 1888-1902.</li><li>[3] Love M I, Huber W, Anders S. Moderated estimation of fold change and dispersion for RNA-seq data[J]. Genome Biology, 2014, 15(12): 550.</li><li>[4] 王某某, 李某某. 生物医学论文中机制叙事的常见偏差与修复[J]. 中国生物信息学, 2024, 22(4): 301-312.</li><li>[5] 匿名审稿人. 你的通路真的是这条通路吗？[J]. 生信吐槽学报, 2025, (2): 1-7.</li></ol>
+                    <h2 id="references">参考文献</h2>
+                    <ol class="reference-list">
+                        <li>[1] Love M I, Huber W, Anders S. Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2[J]. Genome Biology, 2014, 15(12): 550.</li>
+                        <li>[2] Subramanian A, Tamayo P, Mootha V K, et al. Gene set enrichment analysis: a knowledge-based approach for interpreting genome-wide expression profiles[J]. PNAS, 2005, 102(43): 15545-15550.</li>
+                        <li>[3] Yu G, Wang L G, Han Y, He Q Y. clusterProfiler: an R package for comparing biological themes among gene clusters[J]. OMICS, 2012, 16(5): 284-287.</li>
+                        <li>[4] Stuart T, Butler A, Hoffman P, et al. Comprehensive integration of single-cell data[J]. Cell, 2019, 177(7): 1888-1902.</li>
+                        <li>[5] Hao Y, Hao S, Andersen-Nissen E, et al. Integrated analysis of multimodal single-cell data[J]. Cell, 2021, 184(13): 3573-3587.</li>
+                        <li>[6] Hernán M A, Robins J M. Causal Inference: What If[M]. Boca Raton: Chapman &amp; Hall/CRC, 2020.</li>
+                        <li>[7] Peng R D. Reproducible research in computational science[J]. Science, 2011, 334(6060): 1226-1227.</li>
+                    </ol>
                 </div>
 
             </main>
